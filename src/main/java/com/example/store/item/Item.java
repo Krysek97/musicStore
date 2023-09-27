@@ -12,15 +12,17 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "item_id")
     public Long id;
-    public String name;
+    public String model;
+    public String brand;
     public Integer price;
-    public Integer value;
-    public String category;
+    public Integer quantity;
+    public Category category;
 
-    public Item(String name, Integer price, Integer value, String category) {
-        this.name = name;
+    public Item(String model, String brand, Integer price, Integer quantity, Category category) {
+        this.model = model;
+        this.brand = brand;
         this.price = price;
-        this.value = value;
+        this.quantity = quantity;
         this.category = category;
     }
 
