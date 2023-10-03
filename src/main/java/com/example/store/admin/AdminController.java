@@ -17,7 +17,7 @@ public class AdminController {
     }
 
     @PostMapping("/add")
-    public Admin add(Admin admin){
+    public Admin add(@RequestBody Admin admin){
         return adminService.add(admin);
     }
 

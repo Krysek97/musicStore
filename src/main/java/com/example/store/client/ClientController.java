@@ -18,7 +18,7 @@ public class ClientController {
     }
 
     @PostMapping("/add")
-    public Client add(Client client){
+    public Client add(@RequestBody Client client){
         return clientService.add(client);
     }
 

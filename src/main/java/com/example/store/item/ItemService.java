@@ -17,17 +17,24 @@ public class ItemService {
     public Item add(Item item){
         return itemRepository.save(item);
     }
+    public List<Item> all(){
+        return itemRepository.findAll();
+    }
 
     public void deleteById(Long id){
         itemRepository.deleteById(id);
     }
 
-    public List<Item> allByCategory(String category){
-        return itemRepository.allByCategory(category);
+    public List<Item> allByCategory(Category category){
+        return itemRepository.findAllByCategory(category);
     }
 
     public Optional<Item> findById(Long id){
         return itemRepository.findById(id);
+    }
+
+    public Item save(Item item){
+        return itemRepository.save(item);
     }
 
 }
