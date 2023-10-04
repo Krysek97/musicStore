@@ -28,8 +28,8 @@ public class ImageService {
         return "file uploaded successfully: " + file.getOriginalFilename();
     }
 
-    public byte[] downloadImage(String imageName){
-        Optional<Image> dbImage = imageRepository.findByName(imageName);
+    public byte[] downloadImage(Long itemId){
+        Optional<Image> dbImage = imageRepository.findByItemId(itemId);
         return dbImage.map(image ->
             ImageUtil.decompressImage(image.getImageData())
         ).orElse(null);

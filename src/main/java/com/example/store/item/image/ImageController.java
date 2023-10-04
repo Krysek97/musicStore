@@ -26,9 +26,9 @@ public class ImageController {
         return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
     }
 
-    @GetMapping("/{fileName}")
-    public ResponseEntity<?> downloadImage (@PathVariable String fileName){
-        byte[] imageData = imageService.downloadImage(fileName);
+    @GetMapping("/{itemId}")
+    public ResponseEntity<?> downloadImage (@PathVariable Long itemId){
+        byte[] imageData = imageService.downloadImage(itemId);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.valueOf(MediaType.IMAGE_PNG_VALUE))
                 .body(imageData);
