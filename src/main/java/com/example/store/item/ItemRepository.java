@@ -11,4 +11,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findAllByCategory(@Param("category") Category category);
 
+
+
 }

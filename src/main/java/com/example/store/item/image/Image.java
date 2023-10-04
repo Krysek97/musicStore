@@ -22,6 +22,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private Long itemId;
     @Lob
     @JdbcTypeCode(Types.LONGVARBINARY)
     private byte[] imageData;
