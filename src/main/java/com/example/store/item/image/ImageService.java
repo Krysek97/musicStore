@@ -13,11 +13,9 @@ public class ImageService {
 
     @Autowired
     private ImageRepository imageRepository;
-    private ItemService itemService;
 
-    public ImageService(ImageRepository imageRepository, ItemService itemService) {
+    public ImageService(ImageRepository imageRepository) {
         this.imageRepository = imageRepository;
-        this.itemService = itemService;
     }
 
     public String uploadImage(MultipartFile file, Long itemId) throws IOException {
@@ -30,8 +28,8 @@ public class ImageService {
         return "file uploaded successfully: " + file.getOriginalFilename();
     }
 
-    public byte[] downloadImage(String imageName){
-        Optional<Image> dbImage = imageRepository.findByName(imageName);
+    public byte[] downloadImage(Long itemId){
+        Optional<Image> dbImage = imageRepository.findByItemId(itemId);
         return dbImage.map(image ->
             ImageUtil.decompressImage(image.getImageData())
         ).orElse(null);
