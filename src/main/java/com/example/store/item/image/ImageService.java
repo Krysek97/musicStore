@@ -19,10 +19,11 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public String uploadImage(MultipartFile file) throws IOException {
+    public String uploadImage(MultipartFile file, Long itemId) throws IOException {
         Image imageToSave = Image.builder()
                 .name(file.getOriginalFilename())
                 .imageData(ImageUtil.compressImage(file.getBytes()))
+                .itemId(itemId)
                 .build();
         imageRepository.save(imageToSave);
         return "file uploaded successfully: " + file.getOriginalFilename();

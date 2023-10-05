@@ -19,14 +19,16 @@ public class Item {
     public Integer price;
     public Integer quantity;
     public Category category;
+    public String description;
 
 
-    public Item(String brand, String model, Integer price, Integer quantity, Category category) {
+    public Item(String brand, String model, Integer price, Integer quantity, Category category, String description) {
         this.brand = brand;
         this.model = model;
         this.price = price;
         this.quantity = quantity;
         this.category = category;
+        this.description = description;
     }
 
     public Item() {

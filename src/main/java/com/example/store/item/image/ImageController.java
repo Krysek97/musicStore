@@ -20,9 +20,9 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<?> uploadImage(@RequestParam("image")MultipartFile file) throws IOException{
-        String uploadImage = imageService.uploadImage(file);
+    @PostMapping("/add/{itemId}")
+    public ResponseEntity<?> uploadImage(@RequestParam("image")MultipartFile file, @PathVariable Long itemId) throws IOException{
+        String uploadImage = imageService.uploadImage(file, itemId);
         return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
     }
 

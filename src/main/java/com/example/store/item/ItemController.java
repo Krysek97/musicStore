@@ -33,7 +33,7 @@ public class ItemController {
         itemService.deleteById(id);
     }
 
-    @GetMapping("/category/{category}")
+    @GetMapping("/all/{category}")
     public List<Item> allByCategory(@PathVariable Category category){
         return itemService.allByCategory(category);
     }
