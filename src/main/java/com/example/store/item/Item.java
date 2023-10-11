@@ -19,6 +19,7 @@ public class Item {
     public Integer price;
     public Integer quantity;
     public Category category;
+    @Column(length = 850)
     public String description;
 
 
