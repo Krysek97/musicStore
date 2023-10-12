@@ -14,7 +14,7 @@ public class Admin {
     private Long id;
     private String username;
     private String password;
-    private final String role = "ADMIN";
+//    private final String role = "ADMIN";
 
     public Admin() {
     }
@@ -31,7 +31,6 @@ public class Admin {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
                 '}';
     }
 }

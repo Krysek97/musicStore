@@ -16,7 +16,7 @@ public class Client {
     private String password;
     private Integer phoneNumber;
     private String address;
-    private final String role = "CLIENT";
+//    private final String role = "CLIENT";
 
     public Client() {
     }
@@ -43,7 +43,6 @@ public class Client {
                 ", password='" + password + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", address='" + address + '\'' +
-                ", role='" + role + '\'' +
                 '}';
     }
 }
